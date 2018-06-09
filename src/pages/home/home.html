@@ -1,14 +1,48 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Ionic Blank
+      Calculator
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+  <div id="keypad">
+  	
+      <div class="horizontal display">
+        <ion-input [(ngModel)]="screen" id="displayPanel" type="text" value="0"></ion-input>
+      </div>
+
+      <div class="horizontal">
+        <div (click)="seven()" id="key7" data-rnc-tag="7" class="key">7</div>
+        <div (click)="eigth()" id="key8" data-rnc-tag="8" class="key">8</div>
+        <div (click)="nine()" id="key9" data-rnc-tag="9" class="key">9</div>
+        <div (click)="plus()" id="keyAdd" class="key operation-key">+</div>
+      </div>
+
+      <div class="horizontal">
+        <div (click)="four()" id="key4" data-rnc-tag="4" class="key">4</div>
+        <div (click)="five()" id="key5" data-rnc-tag="5" class="key">5</div>
+        <div (click)="six()" id="key6" data-rnc-tag="6" class="key">6</div>
+        <div (click)="minus()" id="keySubtract" class="key operation-key">-</div>
+      </div>
+
+      <div class="horizontal">
+        <div (click)="one()" id="key1" data-rnc-tag="1" class="key">1</div>
+        <div (click)="two()" id="key2" data-rnc-tag="2" class="key">2</div>
+        <div (click)="three()" id="key3" data-rnc-tag="3" class="key">3</div>
+        <div (click)="multiply()" id="keyMultiply" class="key operation-key">x</div>
+      </div>
+
+      <div class="horizontal ">
+        <div id="keyC" data-rnc-tag="C" class="key control-key">
+          <button ion-button small color="orange" (click)="clear()">CE</button>
+          <button ion-button small color="orange" (click)="point()">.</button>
+        </div>
+        <div (click)="zero()" id="keyPlusMinus" class="key control-key">0</div>
+        <div (click)="equal()" id="keyPercent" class="key control-key">=</div>
+        <div (click)="divide()" id="keyDivide" class="key operation-key">/</div>
+      </div>
+
+    </div>
 </ion-content>
